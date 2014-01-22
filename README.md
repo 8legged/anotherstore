@@ -1,5 +1,3 @@
-== README
-
 ## Description
 This app is based on **RailsCasts [Episode #417: Foundation](http://railscasts.com/episodes/417-foundation)**
 
