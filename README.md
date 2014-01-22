@@ -18,7 +18,7 @@ rails g foundation:install
 
 ### Known Issues
 This is a work in progress. Your comments and contributions are welcome! Please open an issue if you run in to any trouble.
-[Issues List](https://github.com/8legged/railscast_store/issues).
+[Issues List](https://github.com/8legged/anotherstore/issues).
 
 ## Authors & Contributors
 * [Jason Niemi](https://github.com/8legged)
