@@ -9,12 +9,13 @@ class ApplicationController < ActionController::Base
 
   def require_user!
     if current_user.nil?
-    flash[:notice] = "Not authorized"
-    redirect_to new_session_url
-  end
+      flash[:notice] = "Not authorized"
+      redirect_to new_session_url
+    end
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    def current_user
+      User.find(session[:user_id]) if session[:user_id]
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
   end
-
 end
