@@ -18,12 +18,12 @@
         <h1><%= link_to "Awesome Store", products_path %></a></h1>
       </li>
     </ul>
-
-
-    <!-- <li class="toggle-topbar menu-icon"><a href="#">Menu</a>  -->
-
     <section class="top-bar-section">
       <ul class="right">
+        <li class="divider"></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Log In", new_session_path %></li>
         <li class="divider"></li>
         <li><%= link_to "Browse Products", products_path %></li>
         <li class="divider"></li>
@@ -35,23 +35,36 @@
       </ul>
     </div>
   </nav>
+  <div id="container"
+    <div id="user_header">
+      <% if current_user %>
+      Logged in as <%= current_user.email %>
+      <%= link_to "Log Out", logout_path %>
 
+      <% else %>
+      <%= link_to "Sign Up", signup_path %> or <%= link_to "Log In", login_path %>
 
-  <div class="row">
-    <div class="small-8 columns"><%= yield %></div>
-    <div class="small-4 columns">
-      <h2 class="subheader">About us</h2>
-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <% end %>
     </div>
   </div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= notice %>
+    <%= yield %>
+  </div>
+  <div class="small-4 columns">
+    <h2 class="subheader">About us</h2>
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+</div>
 
 
-  <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "application" %>
 </body>
 </html>
