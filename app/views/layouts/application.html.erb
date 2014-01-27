@@ -21,17 +21,31 @@
     <section class="top-bar-section">
       <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to "Sign Up", new_user_path %></li>
+        <% if current_user %>
+        <li><%= link_to "Log Out", logout_path %></li>
         <li class="divider"></li>
+        <% else %>
+        <%#= link_to "Sign Up", signup_path %>
+        <!-- or -->
+        <%#= link_to "Log In", login_path %>
         <li><%= link_to "Log In", new_session_path %></li>
         <li class="divider"></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li class="divider"></li>
+        <% end %>
+        <li class="divider"></li>
+
         <li><%= link_to "Browse Products", products_path %></li>
         <li class="divider"></li>
+
         <li><%= link_to "Price List" %></li>
         <li class="divider"></li>
+
         <li><%= link_to "Contact Us" %></li>
         <li class="divider"></li>
+
         <li><%= link_to "Cart" %></li>
+
       </ul>
     </div>
   </nav>
@@ -39,11 +53,8 @@
     <div id="user_header">
       <% if current_user %>
       Logged in as <%= current_user.email %>
-      <%= link_to "Log Out", logout_path %>
-
       <% else %>
-      <%= link_to "Sign Up", signup_path %> or <%= link_to "Log In", login_path %>
-
+      Not logged in.
       <% end %>
     </div>
   </div>
@@ -65,5 +76,6 @@
 
 
 <%= javascript_include_tag "application" %>
+
 </body>
 </html>
