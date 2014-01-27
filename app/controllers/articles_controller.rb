@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-  before_filter :current_user, only: [:edit, :update]
+  before_filter :authorize, only: [:edit, :update]
 
   def index
-    # @articles = Article.all
+    @articles = Article.all
   end
 
   def show
